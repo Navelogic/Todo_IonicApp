@@ -52,28 +52,101 @@ export class HomePage {
   }
 
   mensagemDeSaudacao(){
-    if(this.hora >= 12){
+    switch (this.hora) {
+      case 12: 
       this.saudacao = "Boa tarde, ";
-    } else if(this.hora >= 18){
+      return this.saudacao;
+      break;
+      case 13: 
+      this.saudacao = "Boa tarde, ";
+      return this.saudacao;
+      break;
+      case 14: 
+      this.saudacao = "Boa tarde, ";
+      return this.saudacao;
+      break;
+      case 15: 
+      this.saudacao = "Boa tarde, ";
+      return this.saudacao;
+      break;
+      case 16: 
+      this.saudacao = "Boa tarde, ";
+      return this.saudacao;
+      break;
+      case 17: 
+      this.saudacao = "Boa tarde, ";
+      return this.saudacao;
+      break;
+      case 18: 
       this.saudacao = "Boa noite, ";
-    } else if(this.hora <= 12){
+      return this.saudacao;
+      break;
+      case 19: 
+      this.saudacao = "Boa noite, ";
+      return this.saudacao;
+      break;
+      case 20: 
+      this.saudacao = "Boa noite, ";
+      return this.saudacao;
+      break;
+      case 21: 
+      this.saudacao = "Boa noite, ";
+      return this.saudacao;
+      break;
+      case 22: 
+      this.saudacao = "Boa noite, ";
+      return this.saudacao;
+      break;
+      case 23: 
+      this.saudacao = "Boa noite, ";
+      return this.saudacao;
+      break;
+      case 0: 
+      this.saudacao = "Boa noite, ";
+      return this.saudacao;
+      break;
+      case 1: 
+      this.saudacao = "Boa noite, ";
+      return this.saudacao;
+      break;
+      case 2: 
+      this.saudacao = "Boa noite, ";
+      return this.saudacao;
+      break;
+      case 3: 
+      this.saudacao = "Boa noite, ";
+      return this.saudacao;
+      break;
+      case 4: 
+      this.saudacao = "Boa noite, ";
+      return this.saudacao;
+      break;
+      case 5: 
       this.saudacao = "Bom dia, ";
+      return this.saudacao;
+      break;
+      case 7: 
+      this.saudacao = "Bom dia, ";
+      return this.saudacao;
+      break;
+      case 8: 
+      this.saudacao = "Bom dia, ";
+      return this.saudacao;
+      break;
+      case 9: 
+      this.saudacao = "Bom dia, ";
+      return this.saudacao;
+      break;
+      case 10: 
+      this.saudacao = "Bom dia, ";
+      return this.saudacao;
+      break;
+      case 11: 
+      this.saudacao = "Bom dia, ";
+      return this.saudacao;
+      break;
     }
-    return this.saudacao;
   };
-
-
-
-
-
-
-
-  
-  
-
-
-  
-  dataAtual: number = Date.now();
 
   async mostrarRotinaAdicao(){
     const alert = await this.alertController.create({
