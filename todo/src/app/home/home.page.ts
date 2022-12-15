@@ -17,8 +17,11 @@ export class HomePage {
       buttons: [{text: 'Cancelar', handler: () => {console.log('Cancelar...')}},
                 {text: 'Adicionar', handler: () => {console.log('Adicionou...')}}]
     });
-
     alert.present();
+  };
+
+  ler(){
+
   };
 
 }
