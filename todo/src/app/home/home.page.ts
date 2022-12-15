@@ -11,6 +11,12 @@ export class HomePage {
   constructor(private alertController: AlertController) {}
   saudacao: any;
   diaDaSemana: any;
+  nomeUser: any;
+
+  solicitarNomeUser(){
+    this.nomeUser = "Arian Weslley";
+    return this.nomeUser;
+  }
 
   data = new Date();
   dia = String(this.data.getDate()).padStart(2, '0');
@@ -44,7 +50,6 @@ export class HomePage {
     }
     return this.diaDaSemana;
   }
-
 
   mensagemDeSaudacao(){
     if(this.hora >= 12){
