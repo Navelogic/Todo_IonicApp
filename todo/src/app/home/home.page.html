@@ -1,8 +1,13 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Boa noite!
-    </ion-title>
+    <ion-item lines="none">
+      <ion-label style="font-weight: 700; font-size: 1.2em;">
+        {{mensagemDeSaudacao()}}Arian Weslley
+        <p>
+          {{dia}}/{{mes}}/{{ano}}
+        </p>
+      </ion-label>
+    </ion-item>
   </ion-toolbar>
 </ion-header>
 
