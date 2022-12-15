@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +8,17 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private alertController: AlertController) {}
 
-  mostrarRotinaAdicao(){
-    
+  async mostrarRotinaAdicao(){
+    const alert = await this.alertController.create({
+      header: 'O que deseja fazer?',
+      inputs: [{name: 'task', type: 'text', placeholder: 'Digite a tarefa'}],
+      buttons: [{text: 'Cancelar', handler: () => {console.log('Cancelar...')}},
+                {text: 'Adicionar', handler: () => {console.log('Adicionou...')}}]
+    });
 
+    alert.present();
   };
 
 }
