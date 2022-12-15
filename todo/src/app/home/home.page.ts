@@ -20,8 +20,7 @@ export class HomePage {
     alert.present();
   };
 
-  ler(){
-
-  };
+  apagar(){};
+  editar(){};
 
 }
