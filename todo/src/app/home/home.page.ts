@@ -7,11 +7,16 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  
-  constructor(private alertController: AlertController) {}
+  listaDeTarefas = [
+  {tarefa:'Aperte no +'}
+  ];
+
   saudacao: any;
   diaDaSemana: any;
   nomeUser: any;
+
+  
+  constructor(private alertController: AlertController) {}
 
   solicitarNomeUser(){
     this.nomeUser = "Arian Weslley";
@@ -157,12 +162,39 @@ export class HomePage {
       header: 'O que deseja fazer?',
       inputs: [{name: 'task', type: 'text', placeholder: 'Digite a tarefa'}],
       buttons: [{text: 'Cancelar', handler: () => {console.log('Cancelar...')}},
-                {text: 'Adicionar', handler: () => {console.log('Adicionou...')}}]
+                {text: 'Adicionar', handler: (form) => {this.incluir(form.task)}}]
     });
     alert.present();
   };
 
-  apagar(){};
+
+
+  apagar(){
+    
+
+  };
   editar(){};
 
-}
+
+
+
+  async incluir(tarefaNova: string){
+    const alert = await this.alertController.create({
+      header: 'Error',
+      message: 'Está em branco',
+      buttons: ['OK']
+    });
+
+    if(tarefaNova.trim().length < 1){
+      alert.present();
+    } else {
+      this.listaDeTarefas.push(
+        {tarefa: tarefaNova}
+      );
+    };
+    }
+  };
+
+
+
+
