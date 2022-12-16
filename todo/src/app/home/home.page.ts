@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { table } from 'console';
 
 @Component({
   selector: 'app-home',
@@ -173,7 +174,18 @@ export class HomePage {
     this.listaDeTarefas.splice(index,1);
   };
 
-  editar(){};
+  async editar(index: number){
+    let teste = this.listaDeTarefas[index];
+    console.log(teste.tarefa);
+
+      const alert = await this.alertController.create({
+        header: 'Editando',
+        inputs: [{name: 'task', type: 'text', placeholder: teste.tarefa}],
+        buttons: [{text: 'Cancelar', handler: () => {console.log('Cancelar...')}},
+                  {text: 'Finalizar', handler: (form) => {}}]
+    });
+    alert.present();
+  };
 
 
 

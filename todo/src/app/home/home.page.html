@@ -13,7 +13,7 @@
 
 <ion-content [fullscreen]="true">
 
-<ion-item-sliding *ngFor="let x of listaDeTarefas; let i=index">
+<ion-item-sliding *ngFor="let x of listaDeTarefas; let i=index;">
   <ion-item>
     <ion-label>{{x.tarefa}}</ion-label>
     <ion-icon slot="start" name="radio-button-off"></ion-icon>
@@ -24,7 +24,7 @@
     </ion-item-options>
 
     <ion-item-options side="start">
-      <ion-item-option color="dark" (click)="editar()">Editar</ion-item-option>
+      <ion-item-option color="dark" (click)="editar(i)">Editar</ion-item-option>
     </ion-item-options>
 
 </ion-item-sliding>
