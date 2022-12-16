@@ -125,6 +125,10 @@ export class HomePage {
       this.saudacao = "Bom dia, ";
       return this.saudacao;
       break;
+      case 6: 
+      this.saudacao = "Bom dia, ";
+      return this.saudacao;
+      break;
       case 7: 
       this.saudacao = "Bom dia, ";
       return this.saudacao;
