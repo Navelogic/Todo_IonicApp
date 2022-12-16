@@ -169,10 +169,10 @@ export class HomePage {
 
 
 
-  apagar(){
-    
-
+  apagar(index: number){
+    this.listaDeTarefas.splice(index,1);
   };
+
   editar(){};
 
 
