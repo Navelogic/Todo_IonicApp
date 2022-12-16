@@ -182,7 +182,14 @@ export class HomePage {
         header: 'Editando',
         inputs: [{name: 'task', type: 'text', placeholder: teste.tarefa}],
         buttons: [{text: 'Cancelar', handler: () => {console.log('Cancelar...')}},
-                  {text: 'Finalizar', handler: (form) => {}}]
+                  {text: 'Finalizar', handler: (form) => {
+                    let array = this.listaDeTarefas;
+                    function update(array: { [x: string]: any; }, index: string | number, newValue: any) {
+                      array[index] = newValue;
+                    };
+                    let newValue = form
+                    update(array, 1, newValue);
+                  }}]
     });
     alert.present();
   };
