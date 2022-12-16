@@ -171,7 +171,7 @@ export class HomePage {
 
 
   apagar(index: number){
-    this.listaDeTarefas.splice(index,1);
+    this.listaDeTarefas.splice(index, 1);
   };
 
   async editar(index: number){
@@ -183,12 +183,7 @@ export class HomePage {
         inputs: [{name: 'task', type: 'text', placeholder: teste.tarefa}],
         buttons: [{text: 'Cancelar', handler: () => {console.log('Cancelar...')}},
                   {text: 'Finalizar', handler: (form) => {
-                    let array = this.listaDeTarefas;
-                    function update(array: { [x: string]: any; }, index: string | number, newValue: any) {
-                      array[index] = newValue;
-                    };
-                    let newValue = form
-                    update(array, 1, newValue);
+                    teste.tarefa = form.task;
                   }}]
     });
     alert.present();
