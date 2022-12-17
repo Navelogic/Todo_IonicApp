@@ -10,8 +10,8 @@ import { from } from 'rxjs';
 export class HomePage {
 
   listaDeTarefas = [
-  {tarefa:'Esquerda para editar'},
-  {tarefa:'Direita para excluir'},
+  {tarefa:'Direita para editar'},
+  {tarefa:'Esquerda para excluir'},
   {tarefa:'Aperte no +'}
   ];
 
