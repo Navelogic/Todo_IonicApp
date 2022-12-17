@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
-import { table } from 'console';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +8,7 @@ import { table } from 'console';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+
   listaDeTarefas = [
   {tarefa:'Esquerda para editar'},
   {tarefa:'Direita para excluir'},
@@ -16,15 +17,26 @@ export class HomePage {
 
   saudacao: any;
   diaDaSemana: any;
-  nomeUser: any;
+  nomeUser: string = 'User';
 
   
   constructor(private alertController: AlertController) {}
 
-  solicitarNomeUser(){
-    this.nomeUser = "Arian Weslley";
-    return this.nomeUser;
-  }
+  async solicitarNomeUser(){
+
+    const alert = await this.alertController.create({
+      header: 'Digite seu nome',
+      inputs: [{name: 'task', type: 'text'}],
+      buttons: [{text: 'Finalizar', handler: (form) => {
+                  this.nomeUser = form.task;}}]
+        });
+        
+        alert.present();
+  };
+
+
+
+
 
   data = new Date();
   dia = String(this.data.getDate()).padStart(2, '0');
