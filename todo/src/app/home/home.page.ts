@@ -9,6 +9,8 @@ import { table } from 'console';
 })
 export class HomePage {
   listaDeTarefas = [
+  {tarefa:'Esquerda para editar'},
+  {tarefa:'Direita para excluir'},
   {tarefa:'Aperte no +'}
   ];
 
@@ -202,7 +204,7 @@ export class HomePage {
     if(tarefaNova.trim().length < 1){
       alert.present();
     } else {
-      this.listaDeTarefas.push(
+      this.listaDeTarefas.unshift(
         {tarefa: tarefaNova}
       );
     };
