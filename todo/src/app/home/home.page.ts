@@ -9,7 +9,7 @@ import { AlertController } from '@ionic/angular';
 export class HomePage {
 
   listaDeTarefas = [
-  {tarefa:'Direita para editar'},
+  {tarefa:'Direita para editar' concl},
   {tarefa:'Esquerda para excluir'},
   {tarefa:'Aperte no +'}
   ];
