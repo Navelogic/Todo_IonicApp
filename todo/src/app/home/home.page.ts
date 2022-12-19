@@ -13,12 +13,12 @@ export class HomePage {
   saudacao: any;
   diaDaSemana: any;
   nomeUser: string = 'User';
+  tarefa: any;
 
   
   constructor(private alertController: AlertController) {}
 
   async solicitarNomeUser(){
-
     const alert = await this.alertController.create({
       header: 'Digite seu nome',
       inputs: [{name: 'task', type: 'text'}],
@@ -28,10 +28,6 @@ export class HomePage {
         
         alert.present();
   };
-
-
-
-
 
   data = new Date();
   dia = String(this.data.getDate()).padStart(2, '0');
@@ -210,9 +206,6 @@ export class HomePage {
     alert.present();
   };
 
-
-
-
   async incluir(tarefaNova: string){
     const alert = await this.alertController.create({
       header: 'Error',
@@ -228,8 +221,23 @@ export class HomePage {
     )}
       ;
     };
-}
 
+    arrayParaJson(){
+      let valor = [{nome: "José"}, {nome: "Carlos"}];
+      let jstring = '';
+
+      jstring = '[';
+      for(let i=0; i < valor.length; i++){
+        jstring = jstring + '{';
+        jstring = jstring + "nome:";
+        jstring = jstring + valor[i].nome;
+        jstring = jstring + '},';
+
+      }
+      jstring = jstring + ']'
+      console.log(jstring);
+    }
+}
 
 
 
