@@ -8,11 +8,7 @@ import { AlertController } from '@ionic/angular';
 })
 export class HomePage {
 
-  listaDeTarefas = [
-  {tarefa:'Direita para editar', status: false},
-  {tarefa:'Esquerda para excluir', status: false},
-  {tarefa:'Aperte no +', status: false}
-  ];
+  listaDeTarefas = Array();
 
   saudacao: any;
   diaDaSemana: any;
@@ -168,6 +164,14 @@ export class HomePage {
       this.saudacao = "Bom dia, ";
       return this.saudacao;
       break;
+    }
+  };
+
+  aleterarStatus(tarefa: any){
+    if(tarefa.status == false){
+      tarefa.status = true;
+    } else {
+      tarefa.status = false;
     }
   };
 
