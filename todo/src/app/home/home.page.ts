@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
-import { from } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -184,9 +183,13 @@ export class HomePage {
 
 
 
-  apagar(index: number){
-    this.listaDeTarefas.splice(index, 1);
-  };
+  apagar(listaDeTarefas : any){
+    for(let i = 0; i < this.listaDeTarefas.length; i++){
+      if(listaDeTarefas.tarefa == this.listaDeTarefas[i].tarefa){
+        this.listaDeTarefas.splice(i, 1);
+      }
+  }
+}
 
   async editar(index: number){
     let teste = this.listaDeTarefas[index];
