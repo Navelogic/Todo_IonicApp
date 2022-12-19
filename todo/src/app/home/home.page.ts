@@ -9,7 +9,7 @@ import { AlertController } from '@ionic/angular';
 export class HomePage {
 
   listaDeTarefas = [
-  {tarefa:'Direita para editar' concl},
+  {tarefa:'Direita para editar'},
   {tarefa:'Esquerda para excluir'},
   {tarefa:'Aperte no +'}
   ];
@@ -221,10 +221,10 @@ export class HomePage {
     } else {
       this.listaDeTarefas.unshift(
         {tarefa: tarefaNova}
-      );
+    )}
+      ;
     };
-    }
-  };
+}
 
 
 
