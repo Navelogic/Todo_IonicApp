@@ -14,9 +14,13 @@ export class HomePage {
   diaDaSemana: any;
   nomeUser: string = 'User';
   tarefa: any;
+  superTeste: any;
 
   
-  constructor(private alertController: AlertController) {}
+  constructor(private alertController: AlertController) {
+    this.trazerLocalStorage();
+  }
+  
 
   async solicitarNomeUser(){
     const alert = await this.alertController.create({
@@ -241,6 +245,11 @@ export class HomePage {
 
     atualizarLocalStorage(){
       localStorage.setItem('tarefaDB', JSON.stringify(this.listaDeTarefas));
+    }
+
+    trazerLocalStorage(){
+     this.listaDeTarefas = (JSON.parse(localStorage.getItem('tarefaDB') || '[]'));
+
     }
 }
 
