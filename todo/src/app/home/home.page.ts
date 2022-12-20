@@ -27,11 +27,15 @@ export class HomePage {
       header: 'Digite seu nome',
       inputs: [{name: 'task', type: 'text'}],
       buttons: [{text: 'Finalizar', handler: (form) => {
-                  this.nomeUser = form.task;}}]
+                  this.nomeUser = form.task;
+                  localStorage.setItem('nomeUser', JSON.stringify(this.nomeUser));
+                
+                }}]
         });
         
         alert.present();
   };
+
 
   data = new Date();
   dia = String(this.data.getDate()).padStart(2, '0');
@@ -173,6 +177,7 @@ export class HomePage {
     } else {
       tarefa.status = false;
     }
+    this.atualizarLocalStorage()
   };
 
   async mostrarRotinaAdicao(){
@@ -190,10 +195,11 @@ export class HomePage {
   apagar(listaDeTarefas : any){
     for(let i = 0; i < this.listaDeTarefas.length; i++){
       if(listaDeTarefas.tarefa == this.listaDeTarefas[i].tarefa){
+        
         this.listaDeTarefas.splice(i, 1);
-        localStorage.removeItem('tarefa');
 
       }
+      this.atualizarLocalStorage()
   }
 }
 
@@ -207,6 +213,7 @@ export class HomePage {
         buttons: [{text: 'Cancelar', handler: () => {console.log('Cancelar...')}},
                   {text: 'Finalizar', handler: (form) => {
                     teste.tarefa = form.task;
+                    this.atualizarLocalStorage()
                   }}]
     });
     alert.present();
@@ -253,9 +260,6 @@ export class HomePage {
      this.listaDeTarefas = (JSON.parse(localStorage.getItem('tarefaDB') || '[]'));
 
     }
-    apagarLocalStorage(){
-      localStorage.clear();
-    };
 }
 
 

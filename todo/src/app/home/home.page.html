@@ -9,6 +9,7 @@
       </ion-label>
     </ion-item>
   </ion-toolbar>
+  <ion-searchbar></ion-searchbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -34,7 +35,7 @@
 
   </ion-item-sliding>
 
-  <ion-card *ngIf="listaDeTarefas.length == 0" (click)="apagarLocalStorage()">
+  <ion-card *ngIf="listaDeTarefas.length == 0">
     <ion-card-header>
       <ion-card-title>Sem tarefas</ion-card-title>
       <ion-card-subtitle>Clique no botão + para começar a se planejar</ion-card-subtitle>
