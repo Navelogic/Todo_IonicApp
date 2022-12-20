@@ -216,9 +216,9 @@ export class HomePage {
     if(tarefaNova.trim().length < 1){
       alert.present();
     } else {
-      this.listaDeTarefas.unshift(
-        {tarefa: tarefaNova, status: false}
-    )}
+      this.listaDeTarefas.unshift({tarefa: tarefaNova, status: false});
+      this.atualizarLocalStorage();
+  }
       ;
     };
 
@@ -236,6 +236,11 @@ export class HomePage {
       }
       jstring = jstring + ']'
       console.log(jstring);
+    }
+
+
+    atualizarLocalStorage(){
+      localStorage.setItem('tarefaDB', JSON.stringify(this.listaDeTarefas));
     }
 }
 
