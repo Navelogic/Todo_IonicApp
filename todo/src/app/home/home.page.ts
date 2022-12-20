@@ -191,6 +191,8 @@ export class HomePage {
     for(let i = 0; i < this.listaDeTarefas.length; i++){
       if(listaDeTarefas.tarefa == this.listaDeTarefas[i].tarefa){
         this.listaDeTarefas.splice(i, 1);
+        localStorage.removeItem('tarefa');
+
       }
   }
 }
@@ -251,6 +253,9 @@ export class HomePage {
      this.listaDeTarefas = (JSON.parse(localStorage.getItem('tarefaDB') || '[]'));
 
     }
+    apagarLocalStorage(){
+      localStorage.clear();
+    };
 }
 
 
