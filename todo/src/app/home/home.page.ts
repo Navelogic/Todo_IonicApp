@@ -7,8 +7,8 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
   listaDeTarefas = Array();
+  valorDaBusca: string = '';
 
   saudacao: any;
   diaDaSemana: any;
@@ -20,7 +20,13 @@ export class HomePage {
   constructor(private alertController: AlertController) {
     this.trazerLocalStorage();
   }
-  
+
+  teste = () => {
+    let x = this.valorDaBusca;
+    console.log(this.listaDeTarefas.filter(x => x));
+  }
+
+
 
   async solicitarNomeUser(){
     const alert = await this.alertController.create({

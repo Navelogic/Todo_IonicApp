@@ -9,12 +9,14 @@
       </ion-label>
     </ion-item>
   </ion-toolbar>
-  <ion-searchbar></ion-searchbar>
+  <ion-searchbar [(ngModel)]="valorDaBusca" placeholder="Busca" animated="true" autocomplete="on" mode="ios" type="text">
+
+  </ion-searchbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
 
-<ion-item-sliding *ngFor="let x of listaDeTarefas; let i=index; ">
+<ion-item-sliding *ngFor="let x of listaDeTarefas; let i=index;">
 
   <ion-item (click)="aleterarStatus(x)">
     <ion-label *ngIf="x.status == false">{{x.tarefa}}</ion-label>
