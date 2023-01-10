@@ -21,11 +21,27 @@ export class HomePage {
     this.trazerLocalStorage();
   }
 
-  teste = () => {
-    let x = this.valorDaBusca;
-    console.log(this.listaDeTarefas.filter(x => x));
+  teste(event: any){
+    this.valorDaBusca = event.target.value.toLowerCase();
+    this.listaDeTarefas = this.filterListaDeTarefas(this.valorDaBusca);
+    console.log(event);
+    if(event.include('Backspace') == true){
+      console.log('Tem!');
+    }
   }
 
+  filterListaDeTarefas(valorDaBusca: string){
+    return this.listaDeTarefas.filter((i) =>{
+      return i.tarefa.toLowerCase().includes(valorDaBusca.toLowerCase());
+    });
+  }
+
+  onClear(){
+    this.trazerLocalStorage();
+    if(this.valorDaBusca == ''){
+      this.trazerLocalStorage();
+    }
+  }
 
 
   async solicitarNomeUser(){

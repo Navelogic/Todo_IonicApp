@@ -9,9 +9,7 @@
       </ion-label>
     </ion-item>
   </ion-toolbar>
-  <ion-searchbar [(ngModel)]="valorDaBusca" placeholder="Busca" animated="true" autocomplete="on" mode="ios" type="text">
-
-  </ion-searchbar>
+  <ion-searchbar [(ngModel)]="valorDaBusca" (ionClear)="onClear()" (keyup)="teste($event)" placeholder="Busca" animated="true" autocomplete="on" mode="ios" type="text"></ion-searchbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
