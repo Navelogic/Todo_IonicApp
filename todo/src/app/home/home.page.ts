@@ -22,14 +22,17 @@ export class HomePage {
   }
 
   teste(event: any){
-    this.valorDaBusca = event.target.value.toLowerCase();
-    this.listaDeTarefas = this.filterListaDeTarefas(this.valorDaBusca);
+    this.loopDeBusca(event);
     console.log(event);
     if(event.code == "Backspace"){
       this.trazerLocalStorage();
-      this.valorDaBusca = event.target.value.toLowerCase();
-      this.listaDeTarefas = this.filterListaDeTarefas(this.valorDaBusca);
+      this.loopDeBusca(event);
     }
+  }
+
+  loopDeBusca(event: any){
+    this.valorDaBusca = event.target.value.toLowerCase();
+    this.listaDeTarefas = this.filterListaDeTarefas(this.valorDaBusca);
   }
 
   filterListaDeTarefas(valorDaBusca: string){
