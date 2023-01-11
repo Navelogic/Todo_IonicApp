@@ -11,9 +11,7 @@ export class HomeServiceService {
 
   constructor(private http: HttpClient) {}
 
-  listarTarefas(){
-    Observable<string[]>{
+  listarTarefas(): Observable<string[]>{
       return this.http.get<string[]>(`${TODO_API}/`)
     };
-  }
-}
+};
