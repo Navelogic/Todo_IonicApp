@@ -218,8 +218,6 @@ export class HomePage {
     alert.present();
   };
 
-
-
   apagar(listaDeTarefas : any){
     for(let i = 0; i < this.listaDeTarefas.length; i++){
       if(listaDeTarefas.tarefa == this.listaDeTarefas[i].tarefa){
@@ -286,6 +284,12 @@ export class HomePage {
     trazerLocalStorage(){
      this.listaDeTarefas = (JSON.parse(localStorage.getItem('tarefaDB') || '[]'));
      this.nomeUser = (JSON.parse(localStorage.getItem('nomeUser') || '[]'));
+    }
+
+    atualizarJsonServer(){
+    }
+
+    trazerJsonserver(){
     }
 }
 
