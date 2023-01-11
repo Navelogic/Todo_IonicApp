@@ -9,8 +9,8 @@ import { AlertController } from '@ionic/angular';
 export class HomePage {
   listaDeTarefas = Array();
   valorDaBusca: string = '';
-
   saudacao: any;
+
   diaDaSemana: any;
   nomeUser: string = 'User';
   tarefa: any;
@@ -25,8 +25,10 @@ export class HomePage {
     this.valorDaBusca = event.target.value.toLowerCase();
     this.listaDeTarefas = this.filterListaDeTarefas(this.valorDaBusca);
     console.log(event);
-    if(event.include('Backspace') == true){
-      console.log('Tem!');
+    if(event.code == "Backspace"){
+      this.trazerLocalStorage();
+      this.valorDaBusca = event.target.value.toLowerCase();
+      this.listaDeTarefas = this.filterListaDeTarefas(this.valorDaBusca);
     }
   }
 
