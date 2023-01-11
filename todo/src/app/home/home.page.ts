@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { HomeServiceService } from './home.service.service';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,7 @@ export class HomePage {
   superTeste: any;
 
   
-  constructor(private alertController: AlertController) {
+  constructor(private alertController: AlertController, private homeService: HomeServiceService) {
     this.trazerLocalStorage();
   }
 
@@ -287,6 +288,4 @@ export class HomePage {
      this.nomeUser = (JSON.parse(localStorage.getItem('nomeUser') || '[]'));
     }
 }
-
-
 
