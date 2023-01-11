@@ -272,20 +272,19 @@ export class HomePage {
         jstring = jstring + "nome:";
         jstring = jstring + valor[i].nome;
         jstring = jstring + '},';
-
       }
       jstring = jstring + ']'
       console.log(jstring);
     }
 
-
     atualizarLocalStorage(){
       localStorage.setItem('tarefaDB', JSON.stringify(this.listaDeTarefas));
+      localStorage.setItem('nomeUser', JSON.stringify(this.nomeUser));
     }
 
     trazerLocalStorage(){
      this.listaDeTarefas = (JSON.parse(localStorage.getItem('tarefaDB') || '[]'));
-
+     this.nomeUser = (JSON.parse(localStorage.getItem('nomeUser') || '[]'));
     }
 }
 
